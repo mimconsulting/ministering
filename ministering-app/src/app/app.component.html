@@ -7,5 +7,16 @@
 </div>
 <h2>Elders:</h2>
 <a (click)=getEldersTable()>Click</a>
+<table class="table">
+  <thead>
+    <td>Elder</td>
+    <td>Fam Count</td>
+  </thead>
+  <tr *ngFor="let elder of getEldersTable()">
+      <td>{{elder.name}}</td>
+      <td>{{elder.famCount}}</td>
+  </tr>
+
+</table>
 <h2>Households:</h2>
 
