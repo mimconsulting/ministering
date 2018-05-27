@@ -30,24 +30,23 @@ $('.column-one .teachee a').each(function() {
 	}
 });
 
-var assignments = {}; var hhId = 1;
+var assignments = []; var hhId = 1;
 $('.teachers').each(function() { 
 	$(this)
 		.find('.teacher')
 		.each( function() { 
 			var assignment = {};
-			//assignment.householdId = hhId;
-
+			
 			if( elders.filter(elder => (elder.name === $(this).text().trim())).length === 1 ) {
 				var assignment = {};
 				assignment.elderId = elders.filter(elder => (elder.name === $(this).text().trim()))[0].id;
 				assignment.householdId = hhId;
+				assignments.push(assignment);
 			}
-			assignments.push(assignment);
 		}
 	);
 	hhId++;
-}); assignments;
+}); JSON.stringify(assignments);
 
 
 
